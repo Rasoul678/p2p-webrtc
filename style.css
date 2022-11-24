@@ -1,0 +1,135 @@
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#videos {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.video-player {
+  background-color: #1a1a1a;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#userVideo {
+  display: none;
+}
+
+.smallFrame {
+  position: fixed;
+  top: 1.5rem;
+  left: 1.5rem;
+  height: 170px;
+  width: 300px;
+  border-radius: 5px;
+  border: 2px solid #b366f9;
+  -webkit-box-shadow: 3px 3px 15px -1px rgba(0, 0, 0, 0.77);
+  box-shadow: 3px 3px 15px -1px rgba(0, 0, 0, 0.77);
+  z-index: 999;
+}
+
+#controls {
+  width: 100%;
+  position: fixed;
+  bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.control__container {
+  background-color: rgba(179, 102, 249, 0.9);
+  border-radius: 50%;
+  padding: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  cursor: pointer;
+}
+
+.control__container svg {
+  color: #000;
+}
+
+.control__container#leaveButton {
+  background-color: rgba(255, 80, 80, 1);
+}
+
+.control__container#leaveButton:hover {
+  animation: 0.4s linear shake;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  15% {
+    transform: translate3d(3px, 0, 0);
+  }
+  30% {
+    transform: translate3d(-3px, 0, 0);
+  }
+  45% {
+    transform: translate3d(3px, 0, 0);
+  }
+  60% {
+    transform: translate3d(-3px, 0, 0);
+  }
+
+  75% {
+    transform: translate3d(3px, 0, 0);
+  }
+  90% {
+    transform: translate3d(-3px, 0, 0);
+  }
+  100% {
+    transform: translate3d(0px, 0, 0);
+  }
+}
+
+.control__container#cameraButton svg.hide {
+  display: none;
+}
+
+.control__container#micButton svg.hide {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .smallFrame {
+    height: 90px;
+    width: 150px;
+  }
+
+  .control__container {
+    width: 3rem;
+    height: 3rem;
+  }
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/javascript.svg" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./lobby.css" />
+    <title>p2p | Room</title>
+  </head>
+  <body>
+    <main id="lobby-container">
+      <div id="form-container">
+        <div id="form__container__header">
+          <p>Create Or Joint a Room</p>
+        </div>
+        <div id="form__content__wrapper">
+          <form id="joinForm" data-js="joinForm">
+            <input
+              type="text"
+              name="invite_link"
+              required
+              aria-label="invite link"
+            />
+            <input
+              type="submit"
+              value="Join Room"
+              aria-label="join room button"
+            />
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script>
+    const form = document.querySelector("[data-js='joinForm']");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const inviteCode = e.target.invite_link.value.replace(/\s/g, "");
+      window.location = `/?room=${inviteCode}`;
+    });
+  </script>
+</html>

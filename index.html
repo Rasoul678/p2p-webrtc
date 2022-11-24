@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/javascript.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>p2p | Web RTC</title>
+  </head>
+  <body>
+    <div id="videos">
+      <video
+        class="video-player"
+        id="myVideo"
+        data-js="myVideo"
+        autoplay
+        playsinline
+      ></video>
+      <video
+        class="video-player"
+        id="userVideo"
+        data-js="userVideo"
+        autoplay
+        playsinline
+      ></video>
+    </div>
+    <div id="controls" data-js="controls">
+      <div
+        title="disable camera"
+        class="control__container"
+        id="cameraButton"
+        data-js="cameraButton"
+      >
+        <i
+          data-feather="video-off"
+          class="hide"
+          data-js="cameraOFFIcon"
+          width="30"
+          height="30"
+        ></i>
+        <i
+          data-feather="video"
+          data-js="cameraONIcon"
+          width="30"
+          height="30"
+        ></i>
+      </div>
+      <div
+        title="mute"
+        class="control__container"
+        id="micButton"
+        data-js="micButton"
+      >
+        <i
+          data-feather="mic-off"
+          class="hide"
+          data-js="micOFFIcon"
+          width="30"
+          height="30"
+        ></i>
+        <i data-feather="mic" data-js="micONIcon" width="30" height="30"></i>
+      </div>
+      <div
+        title="hangup"
+        class="control__container"
+        id="leaveButton"
+        data-js="leaveButton"
+      >
+        <i
+          data-feather="phone-off"
+          data-js="micIcon"
+          width="30"
+          height="30"
+        ></i>
+      </div>
+    </div>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
